@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Login_Activity">
+    android:layout_margin="15dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="110dp"
-        android:layout_gravity="center"/>
-<!--        android:src="@drawable/chao"/>-->
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/jd4"/>
+   <ImageView
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:layout_gravity="center"
+       android:layout_marginTop="50dp"
+       android:layout_marginBottom="20dp"/>
+<!--       android:src="@drawable/key"/>-->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
         android:layout_marginBottom="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edUserName"
+            android:id="@+id/edPassOld"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_person"
-            android:hint="Tên đăng nhập"/>
-
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:hint="Mật khẩu cũ"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,44 +36,52 @@
         android:layout_marginBottom="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edPassword"
+            android:id="@+id/edPassChange"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:hint="Mật khẩu"/>
+            android:hint="Mật khẩu mới"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <CheckBox
-        android:id="@+id/chkRememberPass"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lưu mật khẩu"
-        android:layout_marginBottom="20dp"/>
+        app:passwordToggleEnabled="true"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edRePassChange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:hint="Nhập lại mật khẩu"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
+        android:orientation="horizontal">
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSaveUserChange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Lưu"
+            android:textSize="20dp"
             android:layout_weight="1"
-            android:background="#F44336"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:text="Đăng nhập"/>
+            android:backgroundTint="#4CAF50"/>
+<!--            android:drawableStart="@drawable/ic_save"/>-->
+
         <Button
-            android:id="@+id/btnCancel"
+            android:id="@+id/btnCancelUserChange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Hủy"
             android:layout_weight="1"
-            android:background="#F44336"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_marginLeft="50dp"
-            android:text="Hủy"/>
+            android:backgroundTint="#F44336"
+            android:textSize="20dp"
+            android:layout_marginLeft="50dp"/>
+<!--            android:drawableStart="@drawable/ic_cancel"/>-->
 
     </LinearLayout>
-
 </LinearLayout>

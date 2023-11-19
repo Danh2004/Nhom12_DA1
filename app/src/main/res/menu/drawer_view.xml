@@ -23,6 +23,9 @@
         <item android:id="@+id/nav_gioHang"
 
             android:title="Giỏ hàng"/>
+        <item android:id="@+id/sub_AddUser"
+
+            android:title="Thêm người dùng"/>
 
 
     </group>
