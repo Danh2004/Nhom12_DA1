@@ -7,13 +7,19 @@
     android:orientation="vertical"
     android:layout_margin="15dp">
 
-   <ImageView
-       android:layout_width="200dp"
-       android:layout_height="200dp"
-       android:layout_gravity="center"
-       android:layout_marginTop="50dp"
-       android:layout_marginBottom="20dp"/>
-<!--       android:src="@drawable/key"/>-->
+<!--   <ImageView-->
+<!--       android:layout_width="200dp"-->
+<!--       android:layout_height="200dp"-->
+<!--       android:layout_gravity="center"-->
+<!--       android:layout_marginTop="50dp"-->
+<!--       android:layout_marginBottom="20dp"/>-->
+<!--&lt;!&ndash;       android:src="@drawable/key"/>&ndash;&gt;-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đổi mật khẩu"
+        android:textSize="30dp"
+        android:layout_gravity="center"/>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

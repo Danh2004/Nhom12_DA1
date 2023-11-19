@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFrg(fragmentChangePass);
 
                 } else if (id == R.id.nav_gioHang) {
-                    setTitle("Thêm người dùng");
+                    setTitle("Giỏ hàng");
                     frag_GioHang fradduser = new frag_GioHang();
                     replaceFrg(fradduser);
 

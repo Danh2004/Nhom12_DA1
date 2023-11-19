@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=7;
+    static  final  int  version=8;
     public MyDbHelper(Context context){
-        super(context,dbName,null,7);
+        super(context,dbName,null,8);
     }
 
     @Override

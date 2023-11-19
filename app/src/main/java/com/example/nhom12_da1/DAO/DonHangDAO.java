@@ -72,4 +72,21 @@ public class DonHangDAO {
         return list;
     }
 
+    // thống kê doanh thu
+    @SuppressLint("Range")
+    public int getDoanhThu(String tuNgay, String denNgay) {
+        String sqlDoanhThu = "SELECT SUM(gia) as doanhThu FROM DonHang WHERE ngay BETWEEN ? AND ?";
+        List<Integer> list = new ArrayList<Integer>();
+        Cursor cursor = db.rawQuery(sqlDoanhThu, new String[]{tuNgay, denNgay});
+        while (cursor.moveToNext()) {
+            try {
+                list.add(Integer.parseInt(cursor.getString(cursor.getColumnIndex("doanhThu"))));
+
+            } catch (Exception e) {
+                list.add(0);
+            }
+        }
+        return list.get(0);
+    }
+
 }
