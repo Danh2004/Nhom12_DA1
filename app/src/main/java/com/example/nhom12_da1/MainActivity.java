@@ -22,9 +22,11 @@ import com.example.nhom12_da1.DAO.ChuHangDAO;
 import com.example.nhom12_da1.DTO.ChuHang;
 import com.example.nhom12_da1.Fragment.frag_DonHang;
 import com.example.nhom12_da1.Fragment.frag_GioHang;
+import com.example.nhom12_da1.Fragment.frag_Hang;
 import com.example.nhom12_da1.Fragment.frag_MuaHang;
 import com.example.nhom12_da1.Fragment.frag_ThanhVien;
 import com.example.nhom12_da1.Fragment.frag_ThongKe;
+import com.example.nhom12_da1.Fragment.fragment_add_user;
 import com.example.nhom12_da1.Fragment.fragment_change_pass;
 import com.google.android.material.navigation.NavigationView;
 
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         ActionBar ab = getSupportActionBar();
+
         ab.setHomeAsUpIndicator(R.drawable.menu);
         ab.setDisplayHomeAsUpEnabled(true);
         // set mau icon ve ban goc
@@ -107,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
                     setTitle("Giỏ hàng");
                     frag_GioHang fradduser = new frag_GioHang();
                     replaceFrg(fradduser);
+                } else if (id == R.id.nav_Hang) {
+                    setTitle("Hãng");
+                    frag_Hang fradhang=new frag_Hang();
+                    replaceFrg(fradhang);
+                } else if (id == R.id.sub_AddUser) {
+                    setTitle("Thêm người dùng");
+                    fragment_add_user fad =new fragment_add_user();
+                    replaceFrg(fad);
+
 
                 } else if (id == R.id.nav_dangXuat) {
                     android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(MainActivity.this);

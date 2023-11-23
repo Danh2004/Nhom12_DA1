@@ -4,20 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cns_pm"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
     android:background="@drawable/boderliss">
+
+    <TextView
+        android:id="@+id/tv_ma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="Mã:        "
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/tv_ten"
+        app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView8" />
 
     <TextView
         android:id="@+id/tv_ten"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:text="Tên:            giàyMLB"
+        android:text="Tên:          "
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,11 +42,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:text="Giá:             150000đ"
+        android:text="Giá:            "
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/img_edit_pm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_soluong" />
 
@@ -53,12 +69,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Hãng:            giày mlb"
+        android:text="Hãng:           "
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/img_edit_pm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gia" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_gia"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_phanloai"
@@ -67,10 +85,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Phân Loại:         39"
+        android:text="Phân Loại:        "
         android:textColor="@color/black"
 
         app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_ten" />
 
@@ -79,12 +98,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:text="Số Lượng:           1"
+        android:text="Số Lượng:          "
         android:textColor="@color/black"
 
         app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_phanloai" />
 
@@ -92,21 +112,11 @@
         android:id="@+id/img_delete_pm"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_delete" />
-
-    <ImageView
-        android:id="@+id/img_edit_pm"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_pencil" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

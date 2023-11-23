@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.example.nhom12_da1.DAO.ChuHangDAO;
 import com.example.nhom12_da1.DTO.ChuHang;
 import com.example.nhom12_da1.R;
+
 import com.google.android.material.textfield.TextInputEditText;
 
 
@@ -21,14 +22,14 @@ public class fragment_change_pass extends Fragment {
 
     TextInputEditText edPassOld, edPassChange, edRePassChange;
     Button btnSaveUserChange, btnCancleUserChange;
-    ChuHangDAO chuHangDAO;
+    ChuHangDAO ttdao;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_change_pass, container, false);
-        chuHangDAO = new ChuHangDAO(getActivity());
+        ttdao = new ChuHangDAO(getActivity());
         edPassOld = v.findViewById(R.id.edPassOld);
         edPassChange = v.findViewById(R.id.edPassChange);
         edRePassChange = v.findViewById(R.id.edRePassChange);
@@ -49,10 +50,10 @@ public class fragment_change_pass extends Fragment {
                 SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
                 String user = pref.getString("USERNAME","");
                 if (validate() > 0) {
-                    ChuHang thuThu = chuHangDAO.getID(user);
+                    ChuHang thuThu = ttdao.getID(user);
                     thuThu.setMatKhau(edPassChange.getText().toString());
 
-                    if (chuHangDAO.updatePass(thuThu) > 0) {
+                    if (ttdao.updatePass(thuThu) > 0) {
                         Toast.makeText(getActivity(), "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
                         edPassOld.setText("");
                         edPassChange.setText("");

@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=8;
+    static  final  int  version=11;
     public MyDbHelper(Context context){
-        super(context,dbName,null,8);
+        super(context,dbName,null,11);
     }
 
     @Override
@@ -46,6 +46,12 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 "gia INTEGER not null)";
         db.execSQL(tbGioHang);
 
+        //tạo bảng hãng
+        String tbHang = "create table Hang(" +
+                "maHang integer primary key,"+
+                "tenHang text not null)";
+        db.execSQL(tbHang);
+
         // Data mau
         db.execSQL("insert into ChuHang values('admin','Admin','admin')," +
                 "('duyanh','Vo Duy Anh','2004')");
@@ -56,6 +62,9 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 "('2','AirForce','43','4','160000','Adidas')" );
         db.execSQL("insert into GioHang values('1','AirJordan','39','40000')," +
                 "('2','AirForce','43','160000')");
+
+        db.execSQL("insert into Hang values(1,'AirJordan')," +
+                "(2,'AirForce')");
     }
 
 
@@ -68,6 +77,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
             db.execSQL("drop table if exists ThanhVien");
             db.execSQL("drop table if exists DonHang");
             db.execSQL("drop table if exists GioHang");
+            db.execSQL("drop table if exists Hang");
             onCreate(db);
         }
     }

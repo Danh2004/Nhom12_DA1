@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.nhom12_da1.DTO.ChuHang;
 import com.example.nhom12_da1.DTO.DonHang;
@@ -24,7 +25,6 @@ public class ThanhVienDAO {
 
     public long insert(ThanhVien obj){
         ContentValues values = new ContentValues();
-        values.put("maTV",obj.getMaTV());
         values.put("hoten",obj.getHoTen());
         values.put("dienThoai",obj.getDienThoai());
         values.put("diaChi",obj.getDiaChi());
@@ -64,6 +64,7 @@ public class ThanhVienDAO {
             obj.setHoTen(cursor.getString(cursor.getColumnIndex("hoten")));
             obj.setDienThoai(cursor.getString(cursor.getColumnIndex("dienThoai")));
             obj.setDiaChi(cursor.getString(cursor.getColumnIndex("diaChi")));
+            Log.i("//==", obj.toString());
 
             list.add(obj);
         }

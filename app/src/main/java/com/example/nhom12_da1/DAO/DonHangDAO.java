@@ -33,11 +33,12 @@ public class DonHangDAO {
 
     public long update(DonHang obj){
         ContentValues values = new ContentValues();
+        values.put("ten",obj.getTenDon());
         values.put("size",obj.getSizeGiayDon());
         values.put("soLuong",obj.getSoLuongDon());
         values.put("gia",obj.getGiaDon());
         values.put("hang",obj.getHangDon());
-        return db.update("DonHang",values,"ten = ?",new String[]{String.valueOf(obj.getMaDon())});
+        return db.update("DonHang",values,"maDon = ?",new String[]{String.valueOf(obj.getMaDon())});
     }
 
     public long delete(String id) {
