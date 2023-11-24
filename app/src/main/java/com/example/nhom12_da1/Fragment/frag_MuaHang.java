@@ -37,7 +37,7 @@ public class frag_MuaHang extends Fragment {
         View view = inflater.inflate(R.layout.frag_giohang, container, false);
         setHasOptionsMenu(true); // Indicate that this fragment has its own options menu
         init(view);
-        setTitle("TRANG CHỦ");
+        setTitle("MUA HÀNG");
         setFindNews();
         return view;
     }
