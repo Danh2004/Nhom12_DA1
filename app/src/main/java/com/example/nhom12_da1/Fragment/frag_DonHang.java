@@ -169,7 +169,7 @@ public class frag_DonHang extends Fragment {
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
         //spinner
-        spHang = dialog.findViewById(R.id.spDon);
+        spHang = dialog.findViewById(R.id.spHang);
         hangSpinner = new HangSpinner(context,listHang);
         spHang.setAdapter(hangSpinner);
         spHang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
