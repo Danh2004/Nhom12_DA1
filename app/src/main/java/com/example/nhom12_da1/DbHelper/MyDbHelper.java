@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=12;
+    static  final  int  version=13;
     public MyDbHelper(Context context){
         super(context,dbName,null,version);
     }
@@ -30,12 +30,13 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
         // tao bang don hang
         String tbDonHang = "create table DonHang("+
-                "maDon integer primary key,"+
+                "maDon integer primary key," +
+                "maHang integer REFERENCES Hang(maHang), "+
                 "ten text not null," +
                 "size text not null," +
                 "soLuong text not null," +
                 "gia INTEGER not null," +
-                "hang  text REFERENCES Hang(maHang) not null)";
+                "hang  text not null)";
         db.execSQL(tbDonHang);
 
         // tao bang gio hang

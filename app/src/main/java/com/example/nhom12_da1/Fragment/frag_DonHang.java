@@ -51,15 +51,16 @@ public class frag_DonHang extends Fragment {
     FloatingActionButton fab;
     Dialog dialog;
 
-    HangDAO hangDAO;
-    Hang hang;
-    ArrayList<Hang> listHang;
-
     EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
     Button btnsave,btnCancel;
     int maHang;
     private SearchView searchView;
     HangSpinner hangSpinner;
+    HangDAO hangDAO;
+    Hang hang;
+    ArrayList<Hang> listHang;
+    int positionHang;
+
 
     public frag_DonHang() {
     }
@@ -169,6 +170,9 @@ public class frag_DonHang extends Fragment {
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
         //spinner
+        hangDAO = new HangDAO(context);
+        listHang = new ArrayList<Hang>();
+        listHang = (ArrayList<Hang>) hangDAO.getAll();
         spHang = dialog.findViewById(R.id.spHang);
         hangSpinner = new HangSpinner(context,listHang);
         spHang.setAdapter(hangSpinner);
@@ -183,6 +187,19 @@ public class frag_DonHang extends Fragment {
 
             }
         });
+
+        if (type != 0) {
+            edMadh.setText(String.valueOf(item.getMaDon()));
+            for (int i = 0; i < listHang.size(); i++)
+                if (item.getMaHang() == (listHang.get(i).getMaHang())) {
+                    positionHang = i;
+                }
+            spHang.setSelection(positionHang);
+
+        }
+
+
+
 
 
 //        edHang=dialog.findViewById(R.id.edHang);
