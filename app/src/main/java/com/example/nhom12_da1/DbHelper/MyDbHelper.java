@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=12;
+    static  final  int  version=14;
     public MyDbHelper(Context context){
         super(context,dbName,null,version);
     }
@@ -30,12 +30,13 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
         // tao bang don hang
         String tbDonHang = "create table DonHang("+
-                "maDon integer primary key,"+
+                "maDon integer primary key," +
+                "maHang integer REFERENCES Hang(maHang), "+
                 "ten text not null," +
                 "size text not null," +
                 "soLuong text not null," +
                 "gia INTEGER not null," +
-                "hang  text REFERENCES Hang(maHang) not null)";
+                "hang  text not null)";
         db.execSQL(tbDonHang);
 
         // tao bang gio hang
@@ -58,8 +59,8 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("insert into ThanhVien values('1','Vo Duy Anh','01234567890','Ha Noi')," +
                 "('2','Vu Xuan Giap','01234567891','Ha Noi')," +
                 "('3','Le Minh Chien','01234567892','Ha Noi')");
-        db.execSQL("insert into DonHang values('1','AirJordan','39','1','40000','Nike')," +
-                "('2','AirForce','43','4','160000','Adidas')" );
+        db.execSQL("insert into DonHang values('1','1','AirJordan','39','1','40000','Nike')," +
+                "('2','2','AirForce','43','4','160000','Adidas')" );
         db.execSQL("insert into GioHang values('1','AirJordan','39','40000')," +
                 "('2','AirForce','43','160000')");
 

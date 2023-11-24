@@ -23,6 +23,8 @@ public class DonHangDAO {
 
     public long insert(DonHang obj){
         ContentValues values = new ContentValues();
+        values.put("maDon",obj.getMaDon());
+        values.put("maHang",obj.getMaHang());
         values.put("ten",obj.getTenDon());
         values.put("size",obj.getSizeGiayDon());
         values.put("soLuong",obj.getSoLuongDon());
@@ -33,6 +35,7 @@ public class DonHangDAO {
 
     public long update(DonHang obj){
         ContentValues values = new ContentValues();
+        values.put("maHang",obj.getMaHang());
         values.put("ten",obj.getTenDon());
         values.put("size",obj.getSizeGiayDon());
         values.put("soLuong",obj.getSoLuongDon());
@@ -63,6 +66,7 @@ public class DonHangDAO {
         while (cursor.moveToNext()){
             DonHang obj = new DonHang();
             obj.setMaDon(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maDon"))));
+            obj.setMaHang(Integer.parseInt(cursor.getString(cursor.getColumnIndex("maHang"))));
             obj.setTenDon(cursor.getString(cursor.getColumnIndex("ten")));
             obj.setSizeGiayDon(cursor.getString(cursor.getColumnIndex("size")));
             obj.setSoLuongDon(cursor.getString(cursor.getColumnIndex("soLuong")));

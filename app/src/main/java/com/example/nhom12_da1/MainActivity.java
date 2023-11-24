@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.example.nhom12_da1.DAO.ChuHangDAO;
 import com.example.nhom12_da1.DTO.ChuHang;
 import com.example.nhom12_da1.Fragment.frag_DonHang;
-import com.example.nhom12_da1.Fragment.frag_GioHang;
 import com.example.nhom12_da1.Fragment.frag_Hang;
 import com.example.nhom12_da1.Fragment.frag_MuaHang;
 import com.example.nhom12_da1.Fragment.frag_ThanhVien;
@@ -106,10 +105,6 @@ public class MainActivity extends AppCompatActivity {
                     fragment_change_pass fragmentChangePass = new fragment_change_pass();
                     replaceFrg(fragmentChangePass);
 
-                } else if (id == R.id.nav_gioHang) {
-                    setTitle("Giỏ hàng");
-                    frag_GioHang fradduser = new frag_GioHang();
-                    replaceFrg(fradduser);
                 } else if (id == R.id.nav_Hang) {
                     setTitle("Hãng");
                     frag_Hang fradhang=new frag_Hang();

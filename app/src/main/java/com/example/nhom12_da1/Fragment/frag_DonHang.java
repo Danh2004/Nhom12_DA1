@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,8 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 
 import com.example.nhom12_da1.Adapter.DonHangAdapter;
+import com.example.nhom12_da1.Adapter.HangAdapter;
+import com.example.nhom12_da1.Adapter.HangSpinner;
 import com.example.nhom12_da1.DAO.DonHangDAO;
 import com.example.nhom12_da1.DAO.HangDAO;
 import com.example.nhom12_da1.DTO.DonHang;
@@ -48,14 +51,16 @@ public class frag_DonHang extends Fragment {
     FloatingActionButton fab;
     Dialog dialog;
 
+    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
+    Button btnsave,btnCancel;
+    int maHang;
+    private SearchView searchView;
+    HangSpinner hangSpinner;
     HangDAO hangDAO;
     Hang hang;
     ArrayList<Hang> listHang;
+    int positionHang;
 
-    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
-    Button btnsave,btnCancel;
-    int maSach;
-    private SearchView searchView;
 
     public frag_DonHang() {
     }
@@ -164,7 +169,40 @@ public class frag_DonHang extends Fragment {
         edPhanloai=dialog.findViewById(R.id.edPhanloai);
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
-        edHang=dialog.findViewById(R.id.edHang);
+        //spinner
+        hangDAO = new HangDAO(context);
+        listHang = new ArrayList<Hang>();
+        listHang = (ArrayList<Hang>) hangDAO.getAll();
+        spHang = dialog.findViewById(R.id.spHang);
+        hangSpinner = new HangSpinner(context,listHang);
+        spHang.setAdapter(hangSpinner);
+        spHang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                maHang = listHang.get(position).getMaHang();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        if (type != 0) {
+            edMadh.setText(String.valueOf(item.getMaDon()));
+            for (int i = 0; i < listHang.size(); i++)
+                if (item.getMaHang() == (listHang.get(i).getMaHang())) {
+                    positionHang = i;
+                }
+            spHang.setSelection(positionHang);
+
+        }
+
+
+
+
+
+//        edHang=dialog.findViewById(R.id.edHang);
         btnCancel=dialog.findViewById(R.id.btnCancelTT);
         btnsave=dialog.findViewById(R.id.btnSaveTT);
 

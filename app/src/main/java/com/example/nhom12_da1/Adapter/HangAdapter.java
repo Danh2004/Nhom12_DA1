@@ -50,7 +50,7 @@ public class HangAdapter extends ArrayAdapter<Hang> {
             hangDAO = new HangDAO(context);
             Hang hang = hangDAO.getID(String.valueOf(item.getMaHang()));
             tvTenHang = v.findViewById(R.id.tvTenLoaiHang);
-            tvTenHang.setText("Tên sách: " + hang.getTenHang());
+            tvTenHang.setText("Tên Hang: " + hang.getTenHang());
 
             imgDel = v.findViewById(R.id.imgDeleteLS);
         }
