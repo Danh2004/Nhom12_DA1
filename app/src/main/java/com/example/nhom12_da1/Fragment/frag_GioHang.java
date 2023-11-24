@@ -16,7 +16,6 @@ public class frag_GioHang extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_giohang,container,false);
-
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

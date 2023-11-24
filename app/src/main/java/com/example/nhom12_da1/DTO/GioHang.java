@@ -1,50 +1,90 @@
 package com.example.nhom12_da1.DTO;
 
 public class GioHang {
-    private int maGio;
-    private String tenGioHang;
-    private String sizeGiayGio;
-    private int giaGiayGio;
+    private int idSanPham;
+    private String tenSanPham, moTa, giaSanPham, loaiSanPham;
+    private int image;
+    private int soLuong;
 
     public GioHang() {
     }
 
-    public GioHang(int maGio, String tenGioHang, String sizeGiayGio, int giaGiayGio) {
-        this.maGio = maGio;
-        this.tenGioHang = tenGioHang;
-        this.sizeGiayGio = sizeGiayGio;
-        this.giaGiayGio = giaGiayGio;
+    public GioHang(int idSanPham, String tenSanPham, String moTa, String giaSanPham, String loaiSanPham, int image, int soLuong) {
+        this.idSanPham = idSanPham;
+        this.tenSanPham = tenSanPham;
+        this.moTa = moTa;
+        this.giaSanPham = giaSanPham;
+        this.loaiSanPham = loaiSanPham;
+        this.image = image;
+        this.soLuong = soLuong;
     }
 
-    public int getMaGio() {
-        return maGio;
+    public int getIdSanPham() {
+        return idSanPham;
     }
 
-    public void setMaGio(int maGio) {
-        this.maGio = maGio;
+    public void setIdSanPham(int idSanPham) {
+        this.idSanPham = idSanPham;
     }
 
-    public String getTenGioHang() {
-        return tenGioHang;
+    public String getTenSanPham() {
+        return tenSanPham;
     }
 
-    public void setTenGioHang(String tenGioHang) {
-        this.tenGioHang = tenGioHang;
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
     }
 
-    public String getSizeGiayGio() {
-        return sizeGiayGio;
+    public String getMoTa() {
+        return moTa;
     }
 
-    public void setSizeGiayGio(String sizeGiayGio) {
-        this.sizeGiayGio = sizeGiayGio;
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
     }
 
-    public int getGiaGiayGio() {
-        return giaGiayGio;
+    public String getGiaSanPham() {
+        return giaSanPham;
     }
 
-    public void setGiaGiayGio(int giaGiayGio) {
-        this.giaGiayGio = giaGiayGio;
+    public void setGiaSanPham(String giaSanPham) {
+        this.giaSanPham = giaSanPham;
+    }
+
+    public String getLoaiSanPham() {
+        return loaiSanPham;
+    }
+
+    public void setLoaiSanPham(String loaiSanPham) {
+        this.loaiSanPham = loaiSanPham;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    @Override
+    public String toString() {
+        return "GioHang{" +
+                "idSanPham=" + idSanPham +
+                ", tenSanPham='" + tenSanPham + '\'' +
+                ", moTa='" + moTa + '\'' +
+                ", giaSanPham='" + giaSanPham + '\'' +
+                ", loaiSanPham='" + loaiSanPham + '\'' +
+                ", image=" + image +
+                ", soLuong=" + soLuong +
+                '}';
     }
 }
