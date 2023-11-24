@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=11;
+    static  final  int  version=12;
     public MyDbHelper(Context context){
-        super(context,dbName,null,11);
+        super(context,dbName,null,version);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 "size text not null," +
                 "soLuong text not null," +
                 "gia INTEGER not null," +
-                "hang text not null)";
+                "hang  text REFERENCES Hang(maHang) not null)";
         db.execSQL(tbDonHang);
 
         // tao bang gio hang
@@ -48,8 +48,8 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
         //tạo bảng hãng
         String tbHang = "create table Hang(" +
-                "maHang integer primary key,"+
-                "tenHang text not null)";
+                "maHang integer  primary key,"+
+                "tenHang text not null )";
         db.execSQL(tbHang);
 
         // Data mau
