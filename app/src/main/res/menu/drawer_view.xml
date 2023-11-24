@@ -5,21 +5,18 @@
         <item android:id="@+id/nav_donHang"
 
             android:title="Quản lý đơn hàng"/>
-        <item android:id="@+id/nav_muaHang"
-
-            android:title="Mua hàng"/>
         <item android:id="@+id/nav_thongKe"
 
             android:title="Thống kê doanh thu"/>
         <item android:id="@+id/nav_ThanhVien"
 
             android:title="Quản lý Thành Viên"/>
+        <item android:id="@+id/nav_muaHang"
+
+            android:title="Mua hàng"/>
         <item android:id="@+id/nav_doiMK"
 
             android:title="Đổi mật khẩu"/>
-        <item android:id="@+id/nav_dangXuat"
-
-            android:title="Đăng xuất"/>
         <item android:id="@+id/nav_gioHang"
 
             android:title="Giỏ hàng"/>
@@ -29,6 +26,9 @@
         <item android:id="@+id/sub_AddUser"
 
             android:title="Thêm người dùng"/>
+        <item android:id="@+id/nav_dangXuat"
+
+            android:title="Đăng xuất"/>
 
 
     </group>
