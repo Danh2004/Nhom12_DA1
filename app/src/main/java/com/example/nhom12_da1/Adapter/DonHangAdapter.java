@@ -16,6 +16,7 @@ import com.example.nhom12_da1.DTO.ThanhVien;
 import com.example.nhom12_da1.Fragment.frag_DonHang;
 import com.example.nhom12_da1.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,9 @@ public class DonHangAdapter extends ArrayAdapter<DonHang> {
     frag_DonHang fragment;
     private ArrayList< DonHang> list;
 
-    TextView tvMadh, tvTengiay,tvPhanloai,tvSoluong,tvGia,tvHang;
+    TextView tvMadh, tvTengiay,tvPhanloai,tvSoluong,tvGia,tvHang,tvngay;
     ImageView imgDelete;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
 
     public DonHangAdapter(@NonNull Context context ,frag_DonHang fragment,ArrayList<DonHang> list) {
@@ -49,16 +51,24 @@ public class DonHangAdapter extends ArrayAdapter<DonHang> {
         if (item!=null){
             tvMadh=v.findViewById(R.id.tv_ma);
             tvMadh.setText("Mã đơn hàng:"+item.getMaDon());
+
             tvTengiay=v.findViewById(R.id.tv_ten);
             tvTengiay.setText("Tên giày:"+item.getTenDon());
+
             tvPhanloai=v.findViewById(R.id.tv_phanloai);
             tvPhanloai.setText("Phân loại:"+item.getSizeGiayDon());
+
             tvSoluong=v.findViewById(R.id.tv_soluong);
             tvSoluong.setText("Số lượng đơn:"+item.getSoLuongDon());
+
             tvGia=v.findViewById(R.id.tv_gia);
             tvGia.setText("Giá:"+item.getGiaDon());
+
             tvHang=v.findViewById(R.id.tv_hang);
             tvHang.setText("Hãng:"+item.getHangDon());
+
+            tvngay = v.findViewById(R.id.tv_ngay);
+            tvngay.setText("Ngày mua: "+sdf.format(item.getNgay()));
 
             imgDelete=v.findViewById(R.id.img_delete_pm);
 

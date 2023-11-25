@@ -10,11 +10,14 @@ import com.example.nhom12_da1.DTO.ChuHang;
 import com.example.nhom12_da1.DTO.DonHang;
 import com.example.nhom12_da1.DbHelper.MyDbHelper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DonHangDAO {
     private SQLiteDatabase db;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
     public DonHangDAO(Context context){
         MyDbHelper dbHelper = new MyDbHelper(context);
@@ -30,6 +33,7 @@ public class DonHangDAO {
         values.put("soLuong",obj.getSoLuongDon());
         values.put("gia",obj.getGiaDon());
         values.put("hang",obj.getHangDon());
+        values.put("ngay",sdf.format(obj.getNgay()));
         return db.insert("DonHang",null,values);
     }
 
@@ -41,6 +45,7 @@ public class DonHangDAO {
         values.put("soLuong",obj.getSoLuongDon());
         values.put("gia",obj.getGiaDon());
         values.put("hang",obj.getHangDon());
+        values.put("ngay",sdf.format(obj.getNgay()));
         return db.update("DonHang",values,"maDon = ?",new String[]{String.valueOf(obj.getMaDon())});
     }
 
@@ -72,6 +77,13 @@ public class DonHangDAO {
             obj.setSoLuongDon(cursor.getString(cursor.getColumnIndex("soLuong")));
             obj.setGiaDon(Integer.parseInt(cursor.getString(cursor.getColumnIndex("gia"))));
             obj.setHangDon(cursor.getString(cursor.getColumnIndex("hang")));
+            try {
+                obj.setNgay(sdf.parse(cursor.getString(cursor.getColumnIndex("ngay"))));
+//                Log.d("jjfjn", "getData: "+sdf.parse(cursor.getString(cursor.getColumnIndex("ngay"))));
+            } catch (ParseException e) {
+                e.printStackTrace();
+//                Log.i("akhjj","123");
+            }
             list.add(obj);
         }
         return list;

@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,9 +36,11 @@ import com.example.nhom12_da1.DTO.Hang;
 import com.example.nhom12_da1.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class frag_DonHang extends Fragment {
@@ -52,6 +55,7 @@ public class frag_DonHang extends Fragment {
     Dialog dialog;
 
     EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
+    TextView edNgay;
     Button btnsave,btnCancel;
     int maHang;
     private SearchView searchView;
@@ -60,6 +64,7 @@ public class frag_DonHang extends Fragment {
     Hang hang;
     ArrayList<Hang> listHang;
     int positionHang;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
 
     public frag_DonHang() {
@@ -169,6 +174,9 @@ public class frag_DonHang extends Fragment {
         edPhanloai=dialog.findViewById(R.id.edPhanloai);
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
+        edNgay=dialog.findViewById(R.id.edNgay);
+        edNgay.setText("Ngay thue: "+sdf.format(new Date()));
+
         //spinner
         hangDAO = new HangDAO(context);
         listHang = new ArrayList<Hang>();
@@ -195,6 +203,8 @@ public class frag_DonHang extends Fragment {
                     positionHang = i;
                 }
             spHang.setSelection(positionHang);
+
+            edNgay.setText("Ngay thue: "+sdf.format(item.getNgay()));
 
         }
 
@@ -238,6 +248,7 @@ public class frag_DonHang extends Fragment {
                 item.setSoLuongDon(edSoluong.getText().toString());
                 item.setGiaDon(parseInt(edGia.getText().toString(),0));
                 item.setHangDon(edHang.getText().toString());
+                item.setNgay(new Date());
                 if (validate() > 0) {
                     if (type == 0) {
                         if (dao.insert(item) > 0) {
