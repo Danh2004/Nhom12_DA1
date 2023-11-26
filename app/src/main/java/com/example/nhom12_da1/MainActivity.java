@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         // admin co quyen add user
         if (user.equalsIgnoreCase("admin")) {
             nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
+            nv.getMenu().findItem(R.id.nav_donHang).setVisible(true);
+            nv.getMenu().findItem(R.id.nav_thongKe).setVisible(true);
+            nv.getMenu().findItem(R.id.nav_ThanhVien).setVisible(true);
         }
         frag_DonHang fragDonHang = new frag_DonHang();
         replaceFrg(fragDonHang);
