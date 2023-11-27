@@ -7,16 +7,17 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 import com.example.nhom12_da1.DTO.GioHang;
+import com.example.nhom12_da1.DbHelper.MyDbHelper;
 import com.example.nhom12_da1.GioHangActivity;
 
 import java.util.ArrayList;
 
 public class GioHangDao {
-    Database dtb;
+    MyDbHelper dtb;
     SQLiteDatabase db;
 
     public GioHangDao(Context context) {
-        dtb = new Database(context);
+        dtb = new MyDbHelper(context);
         db = dtb.getWritableDatabase();
     }
 

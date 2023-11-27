@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     static final String dbName = "GiaySneaker";
-    static  final  int  version=16;
+    static  final  int  version=17;
     public MyDbHelper(Context context){
         super(context,dbName,null,version);
     }
@@ -40,13 +40,24 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 "ngay DATE NOT NULL)";
         db.execSQL(tbDonHang);
 
-        // tao bang gio hang
-        String tbGioHang = "create table GioHang(" +
-                "maGio integer primary key,"+
-                "ten text not null," +
-                "size text not null," +
-                "gia INTEGER not null)";
-        db.execSQL(tbGioHang);
+        //Tạo bảng để thêm vô giỏ hàng
+        String sql = "CREATE TABLE giohang(" +
+                "idSanPham integer PRIMARY KEY, " +
+                "tenSanPham text," +
+                "moTa text," +
+                "giaSanPham text," +
+                "loaiSanPham text," +
+                "image integer," +
+                "soLuong integer)";
+        db.execSQL(sql);
+
+//        // tao bang gio hang
+//        String tbGioHang = "create table GioHang(" +
+//                "maGio integer primary key,"+
+//                "ten text not null," +
+//                "size text not null," +
+//                "gia INTEGER not null)";
+//        db.execSQL(tbGioHang);
 
         //tạo bảng hãng
         String tbHang = "create table Hang(" +
@@ -62,8 +73,8 @@ public class MyDbHelper extends SQLiteOpenHelper {
                 "('3','Le Minh Chien','01234567892','Ha Noi')");
         db.execSQL("insert into DonHang values('1','1','AirJordan','39','1','40000','Nike','2023/04/20')," +
                 "('2','2','AirForce','43','4','160000','Adidas','2023/04/20')" );
-        db.execSQL("insert into GioHang values('1','AirJordan','39','40000')," +
-                "('2','AirForce','43','160000')");
+//        db.execSQL("insert into GioHang values('1','AirJordan','39','40000')," +
+//                "('2','AirForce','43','160000')");
 
         db.execSQL("insert into Hang values(1,'AirJordan')," +
                 "(2,'AirForce')");
