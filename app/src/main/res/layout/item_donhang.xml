@@ -87,7 +87,6 @@
         android:layout_marginEnd="16dp"
         android:text="Phân Loại:        "
         android:textColor="@color/black"
-
         app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
@@ -107,6 +106,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_phanloai" />
+
+    <TextView
+        android:id="@+id/tv_ngay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ngày:          "
+        android:textColor="@color/black"
+
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="165dp" />
 
     <ImageView
         android:id="@+id/img_delete_pm"

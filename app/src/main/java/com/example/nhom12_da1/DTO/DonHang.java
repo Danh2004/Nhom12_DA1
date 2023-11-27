@@ -1,5 +1,7 @@
 package com.example.nhom12_da1.DTO;
 
+import java.util.Date;
+
 public class DonHang {
     private int maDon;
     private int maHang;
@@ -8,11 +10,12 @@ public class DonHang {
     private String soLuongDon;
     private int giaDon;
     private String hangDon;
+    private Date ngay;
 
     public DonHang() {
     }
 
-    public DonHang(int maDon, int maHang, String tenDon, String sizeGiayDon, String soLuongDon, int giaDon, String hangDon) {
+    public DonHang(int maDon, int maHang, String tenDon, String sizeGiayDon, String soLuongDon, int giaDon, String hangDon, Date ngay) {
         this.maDon = maDon;
         this.maHang = maHang;
         this.tenDon = tenDon;
@@ -20,6 +23,7 @@ public class DonHang {
         this.soLuongDon = soLuongDon;
         this.giaDon = giaDon;
         this.hangDon = hangDon;
+        this.ngay = ngay;
     }
 
     public int getMaDon() {
@@ -76,5 +80,13 @@ public class DonHang {
 
     public void setHangDon(String hangDon) {
         this.hangDon = hangDon;
+    }
+
+    public Date getNgay() {
+        return ngay;
+    }
+
+    public void setNgay(Date ngay) {
+        this.ngay = ngay;
     }
 }
