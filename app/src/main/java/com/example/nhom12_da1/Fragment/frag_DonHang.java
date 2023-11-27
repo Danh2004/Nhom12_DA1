@@ -1,6 +1,7 @@
 package com.example.nhom12_da1.Fragment;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -38,9 +40,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class frag_DonHang extends Fragment {
@@ -66,6 +70,7 @@ public class frag_DonHang extends Fragment {
     int positionHang;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
+    int mYear,mMonth,mDay;
 
     public frag_DonHang() {
     }
@@ -175,7 +180,7 @@ public class frag_DonHang extends Fragment {
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
         edNgay=dialog.findViewById(R.id.edNgay);
-        edNgay.setText("Ngay thue: "+sdf.format(new Date()));
+        edNgay.setText("Ngay: "+sdf.format(new Date()));
 
         //spinner
         hangDAO = new HangDAO(context);
@@ -204,12 +209,9 @@ public class frag_DonHang extends Fragment {
                 }
             spHang.setSelection(positionHang);
 
-            edNgay.setText("Ngay thue: "+sdf.format(item.getNgay()));
+            edNgay.setText("Ngày: "+sdf.format(item.getNgay()));
 
         }
-
-
-
 
 
 //        edHang=dialog.findViewById(R.id.edHang);
@@ -221,7 +223,6 @@ public class frag_DonHang extends Fragment {
 
 
         //
-
 
 
         if (type !=0){

@@ -13,6 +13,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -69,12 +70,29 @@ public class MainActivity extends AppCompatActivity {
         tvUser.setText("Welcome " + username + "!");
 
         // admin co quyen add user
-        if (user.equalsIgnoreCase("admin")) {
-            nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
-            nv.getMenu().findItem(R.id.nav_donHang).setVisible(true);
-            nv.getMenu().findItem(R.id.nav_thongKe).setVisible(true);
-            nv.getMenu().findItem(R.id.nav_ThanhVien).setVisible(true);
+        Intent intent = getIntent();
+        String logUser = intent.getStringExtra("user");
+        Menu menu = nv.getMenu();
+        MenuItem quanLydonHang = menu.findItem(R.id.nav_donHang);
+        MenuItem quanLythongKe = menu.findItem(R.id.nav_thongKe);
+        MenuItem quanLythanhVien = menu.findItem(R.id.nav_ThanhVien);
+        MenuItem themNguoiDung = menu.findItem(R.id.sub_AddUser);
+        if (!"admin".equals(logUser)) {
+            quanLydonHang.setVisible(false);
+            quanLythongKe.setVisible(false);
+            quanLythanhVien.setVisible(false);
+            themNguoiDung.setVisible(false);
         }
+
+
+
+
+//        if (user.equalsIgnoreCase("admin")) {
+//            nv.getMenu().findItem(R.id.sub_AddUser).setVisible(true);
+//            nv.getMenu().findItem(R.id.nav_donHang).setVisible(true);
+//            nv.getMenu().findItem(R.id.nav_thongKe).setVisible(true);
+//            nv.getMenu().findItem(R.id.nav_ThanhVien).setVisible(true);
+//        }
         frag_DonHang fragDonHang = new frag_DonHang();
         replaceFrg(fragDonHang);
 

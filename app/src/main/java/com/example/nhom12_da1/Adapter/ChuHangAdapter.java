@@ -48,7 +48,7 @@ public class ChuHangAdapter extends ArrayAdapter<ChuHang> {
         final ChuHang item = list.get(position);
         if (item != null){
             tvMaTT = v.findViewById(R.id.tvMaTT);
-            tvMaTT.setText("Mã TT: "+item.getMaCH());
+            tvMaTT.setText("Mã TV: "+item.getMaCH());
             tvTenTT = v.findViewById(R.id.tvTenTT);
             tvTenTT.setText("Họ tên: "+item.getHoTen());
             tvMatKhau = v.findViewById(R.id.tvMatKhau);

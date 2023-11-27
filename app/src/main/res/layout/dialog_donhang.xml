@@ -75,12 +75,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:id="@+id/edNgay"
-           android:layout_marginLeft="3dp"
-           android:text="Ngày: "/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edNgay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày: "
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
 
