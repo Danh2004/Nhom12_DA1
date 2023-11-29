@@ -58,7 +58,7 @@ public class frag_DonHang extends Fragment {
     FloatingActionButton fab;
     Dialog dialog;
 
-    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
+    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia;
     TextView edNgay;
     Button btnsave,btnCancel;
     int maHang;
@@ -217,9 +217,6 @@ public class frag_DonHang extends Fragment {
             edNgay.setText("Ngày: "+sdf.format(item.getNgay()));
 
         }
-
-
-
 
         if (type !=0){
             edMadh.setText(String.valueOf(item.getMaDon()));

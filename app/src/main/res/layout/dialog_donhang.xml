@@ -104,12 +104,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/edHang"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint=" Hãng"/>-->
-
         <Spinner
             android:id="@+id/spHang"
             android:layout_width="match_parent"
