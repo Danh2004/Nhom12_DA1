@@ -58,7 +58,7 @@ public class frag_DonHang extends Fragment {
     FloatingActionButton fab;
     Dialog dialog;
 
-    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia,edHang;
+    EditText edMadh,edTendh,edPhanloai,edSoluong,edGia;
     TextView edNgay;
     Button btnsave,btnCancel;
     int maHang;
@@ -179,13 +179,18 @@ public class frag_DonHang extends Fragment {
         edPhanloai=dialog.findViewById(R.id.edPhanloai);
         edSoluong=dialog.findViewById(R.id.edSoluong);
         edGia=dialog.findViewById(R.id.edGia);
+        btnCancel=dialog.findViewById(R.id.btnCancelTT);
+        btnsave=dialog.findViewById(R.id.btnSaveTT);
+
         edNgay=dialog.findViewById(R.id.edNgay);
         edNgay.setText("Ngay: "+sdf.format(new Date()));
+        edMadh.setEnabled(false);
 
         //spinner
         hangDAO = new HangDAO(context);
         listHang = new ArrayList<Hang>();
         listHang = (ArrayList<Hang>) hangDAO.getAll();
+
         spHang = dialog.findViewById(R.id.spHang);
         hangSpinner = new HangSpinner(context,listHang);
         spHang.setAdapter(hangSpinner);
@@ -213,25 +218,13 @@ public class frag_DonHang extends Fragment {
 
         }
 
-
-//        edHang=dialog.findViewById(R.id.edHang);
-        btnCancel=dialog.findViewById(R.id.btnCancelTT);
-        btnsave=dialog.findViewById(R.id.btnSaveTT);
-
-        edMadh.setEnabled(false);
-
-
-
-        //
-
-
         if (type !=0){
             edMadh.setText(String.valueOf(item.getMaDon()));
             edTendh.setText(item.getTenDon());
             edPhanloai.setText(item.getSizeGiayDon());
             edSoluong.setText(item.getSoLuongDon());
             edGia.setText(String.valueOf(item.getGiaDon()));
-            edHang.setText(item.getHangDon());
+//            edHang.setText(item.getHangDon());
         }
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -248,7 +241,6 @@ public class frag_DonHang extends Fragment {
                 item.setSizeGiayDon(edPhanloai.getText().toString());
                 item.setSoLuongDon(edSoluong.getText().toString());
                 item.setGiaDon(parseInt(edGia.getText().toString(),0));
-                item.setHangDon(edHang.getText().toString());
                 item.setNgay(new Date());
                 if (validate() > 0) {
                     if (type == 0) {
@@ -279,7 +271,7 @@ public class frag_DonHang extends Fragment {
 
     public int validate() {
         int check = 1;
-        if (edTendh.getText().length() == 0 || edPhanloai.getText().length() == 0 || edSoluong.getText().length() == 0 ||edGia.getText().length() == 0||edHang.getText().length() == 0) {
+        if (edTendh.getText().length() == 0 || edPhanloai.getText().length() == 0 || edSoluong.getText().length() == 0 ||edGia.getText().length() == 0) {
             Toast.makeText(getContext(), "Bạn phải nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             check = -1;
 
@@ -287,6 +279,7 @@ public class frag_DonHang extends Fragment {
         return check;
 
     }
+//    ||edHang.getText().length() == 0
     public static int parseInt(String string, int defaultValue) {
         try {
             return Integer.parseInt(string);
@@ -312,7 +305,7 @@ public class frag_DonHang extends Fragment {
             @Override
             public int compare(DonHang dh1, DonHang dh2) {
                 return dh1.getTenDon().compareTo(dh2.getTenDon());
-//                return sach1.getGiaThue() - sach2.getGiaThue();
+
             }
         });
         adapter.notifyDataSetChanged();
@@ -324,7 +317,7 @@ public class frag_DonHang extends Fragment {
             @Override
             public int compare(DonHang dh1, DonHang dh2) {
                 return dh2.getTenDon().compareTo(dh1.getTenDon());
-//                return sach2.getGiaThue() - sach1.getGiaThue();
+
             }
         });
         adapter.notifyDataSetChanged();

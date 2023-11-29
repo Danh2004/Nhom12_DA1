@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.nhom12_da1.Adapter.HangAdapter;
@@ -37,6 +38,7 @@ public class frag_Hang extends Fragment {
     Dialog dialog;
     EditText edMaHang, edTenLoaiHang;
     Button btnSave, btnCancel;
+
 
 
     public frag_Hang() {
