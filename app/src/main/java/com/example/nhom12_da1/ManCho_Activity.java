@@ -20,6 +20,6 @@ public class ManCho_Activity extends AppCompatActivity {
                 Intent intent = new Intent(ManCho_Activity.this, Login_Activity.class);
                 startActivity(intent);
             }
-        }, 3500);
+        }, 3000);
     }
 }
