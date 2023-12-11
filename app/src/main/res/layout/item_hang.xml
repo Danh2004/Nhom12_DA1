@@ -22,7 +22,9 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/jd4"
+                android:background="@drawable/hang"
                 android:layout_marginLeft="3dp"
+
                 android:layout_gravity="center"/>
             <LinearLayout
                 android:layout_width="0dp"

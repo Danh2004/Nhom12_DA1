@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class DonHang {
     private int maDon;
-    private int maHang;
     private String tenDon ;
     private String sizeGiayDon;
     private String soLuongDon;
@@ -15,9 +14,8 @@ public class DonHang {
     public DonHang() {
     }
 
-    public DonHang(int maDon, int maHang, String tenDon, String sizeGiayDon, String soLuongDon, int giaDon, String hangDon, Date ngay) {
+    public DonHang(int maDon, String tenDon, String sizeGiayDon, String soLuongDon, int giaDon, String hangDon, Date ngay) {
         this.maDon = maDon;
-        this.maHang = maHang;
         this.tenDon = tenDon;
         this.sizeGiayDon = sizeGiayDon;
         this.soLuongDon = soLuongDon;
@@ -34,13 +32,6 @@ public class DonHang {
         this.maDon = maDon;
     }
 
-    public int getMaHang() {
-        return maHang;
-    }
-
-    public void setMaHang(int maHang) {
-        this.maHang = maHang;
-    }
 
     public String getTenDon() {
         return tenDon;

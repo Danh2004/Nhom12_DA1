@@ -68,7 +68,7 @@ public class DonHangAdapter extends ArrayAdapter<DonHang> {
             tvHang.setText("Hãng:"+item.getHangDon());
 
             tvngay = v.findViewById(R.id.tv_ngay);
-            tvngay.setText("Ngày mua: "+sdf.format(item.getNgay()));
+            tvngay.setText("Ngày : "+sdf.format(item.getNgay()));
 
             imgDelete=v.findViewById(R.id.img_delete_pm);
 

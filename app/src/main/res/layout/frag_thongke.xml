@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Doanh Thu"
+        android:text="DOANH THU"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:textStyle="normal"/>
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:backgroundTint="@color/red"
             android:text="Từ ngày:"/>
 
         <EditText
@@ -59,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:backgroundTint="@color/red"
             android:text="Đến ngày:"/>
 
         <EditText
@@ -83,11 +85,12 @@
         android:id="@+id/btnDoanhThu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom"
+        android:backgroundTint="@color/red"
         android:drawableStart="@drawable/ic_money"
         android:textSize="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+
         android:text="Doanh Thu"/>
 
     <TextView

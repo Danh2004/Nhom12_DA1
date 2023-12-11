@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:text="Tên:          "
         android:textColor="@color/black"
@@ -42,7 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Giá:            "
         android:textColor="@color/black"
@@ -88,7 +88,7 @@
         android:text="Phân Loại:        "
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_ten" />
 
@@ -97,7 +97,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Số Lượng:          "
         android:textColor="@color/black"
@@ -107,16 +107,30 @@
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tv_phanloai" />
 
+<!--    <TextView-->
+<!--        android:id="@+id/tv_ngay"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Ngày:"-->
+<!--        android:textColor="@color/black"-->
+
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="76dp"-->
+<!--        tools:layout_editor_absoluteY="6dp" />-->
     <TextView
         android:id="@+id/tv_ngay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="Ngày:          "
         android:textColor="@color/black"
 
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="165dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toStartOf="@+id/img_delete_pm"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hang" />
 
     <ImageView
         android:id="@+id/img_delete_pm"

@@ -16,7 +16,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/ln_gradien"
         android:gravity="center"
-        android:text="THANH TOÁN"
+        android:text="THÊM VÀO ĐƠN HÀNG"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold" />
@@ -99,7 +99,7 @@
             android:layout_height="48dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button"
-            android:text="THANH TOÁN"
+            android:text="THÊM ĐƠN HÀNG"
             android:textColor="@color/white"
             android:textStyle="bold" />
 

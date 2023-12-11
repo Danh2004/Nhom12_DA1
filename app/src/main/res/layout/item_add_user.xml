@@ -21,7 +21,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/man"
+                android:background="@drawable/user"
                 android:layout_marginLeft="3dp"
                 android:layout_gravity="center"/>
             <LinearLayout

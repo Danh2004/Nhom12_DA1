@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đơn hàng"
+        android:text="Quản lý sản phẩm"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textSize="30dp"
@@ -67,22 +67,6 @@
             android:layout_height="wrap_content"
             android:hint=" Số lượng"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edNgay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ngày: "
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -94,7 +78,7 @@
         android:paddingBottom="8dp">
 
         <EditText
-            android:id="@+id/ed_ngay"
+            android:id="@+id/edNgay"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -136,13 +120,14 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
 
-        <Spinner
-            android:id="@+id/spHang"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edHang"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
+            android:layout_height="wrap_content"
+            android:hint=" Hang"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
 
@@ -157,14 +142,14 @@
             android:layout_height="wrap_content"
             android:text="Lưu"
             android:layout_marginHorizontal="20dp"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#F44336"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/btnCancelTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hủy"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#4CAF50"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"/>
     </LinearLayout>
